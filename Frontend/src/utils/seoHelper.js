@@ -33,7 +33,7 @@ export const updatePageSEO = ({
   setMetaTag('property', 'og:description', description);
   setMetaTag('property', 'og:url', canonicalUrl);
   setMetaTag('property', 'og:type', 'website');
-  setMetaTag('property', 'og:site_name', 'Calcify');
+  setMetaTag('property', 'og:site_name', 'FormulaForge');
 
   // 4. Twitter / X Metadata
   setMetaTag('name', 'twitter:card', 'summary_large_image');
@@ -50,7 +50,7 @@ export const updatePageSEO = ({
   canonicalLink.setAttribute('href', canonicalUrl);
 
   // 6. JSON-LD Structured Data
-  // Remove existing JSON-LD scripts injected by Calcify
+  // Remove existing JSON-LD scripts injected by FormulaForge
   const existingScripts = document.querySelectorAll('script[data-seo="calcify-jsonld"]');
   existingScripts.forEach(el => el.remove());
 
@@ -67,7 +67,7 @@ export const updatePageSEO = ({
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Calcify — ML & Statistics Calculators',
+      name: 'FormulaForge — ML & Statistics Calculators',
       url: typeof window !== 'undefined' ? window.location.origin : 'https://formulaforge-9rpx.onrender.com'
     }
   });

@@ -337,7 +337,7 @@ const HomePage = () => {
             <Calculator size={22} color="#ffffff" />
           </div>
           <div className={styles.brandText}>
-            <span className={styles.brandTitle}>Calcify</span>
+            <span className={styles.brandTitle}>FormulaForge</span>
             <span className={styles.brandSubtitle}>ML & Statistics Calculators</span>
           </div>
         </div>
@@ -739,7 +739,7 @@ const HomePage = () => {
         gap: '6px'
       }}>
         <div>
-          Calcify &copy; {new Date().getFullYear()} — Machine Learning &amp; Statistics Calculators.
+          FormulaForge &copy; {new Date().getFullYear()} — Machine Learning &amp; Statistics Calculators.
         </div>
         <div>
           Calculators for Decision Trees, Classification Performance Metrics, and Regression Analysis.
