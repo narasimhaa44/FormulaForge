@@ -68,7 +68,7 @@ export const updatePageSEO = ({
     isPartOf: {
       '@type': 'WebSite',
       name: 'Calcify — ML & Statistics Calculators',
-      url: typeof window !== 'undefined' ? window.location.origin : 'https://calcify.dev'
+      url: typeof window !== 'undefined' ? window.location.origin : 'https://formulaforge-9rpx.onrender.com'
     }
   });
 

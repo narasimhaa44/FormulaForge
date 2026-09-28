@@ -6,4 +6,4 @@ Allow: /machine-learning-calculators/
 Allow: /assets/
 
 # Sitemap location
-Sitemap: https://calcify.dev/sitemap.xml
+Sitemap: https://formulaforge-9rpx.onrender.com/sitemap.xml
