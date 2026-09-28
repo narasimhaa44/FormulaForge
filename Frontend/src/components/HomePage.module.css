@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:global(body) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #0b1e22;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:global(#root) {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background container with wallpaper */
+.pageContainer {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url("../assets/back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  position: relative;
+}
+
+/* Top bar with branding and quick search/categories */
+.topNav {
+  width: 95%;
+  max-width: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.35);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.brandSubtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #0d9488;
+  letter-spacing: 0.2px;
+}
+
+.categoryBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  padding: 6px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.catBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.catBtnActive {
+  background: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+}
+
+.catBtn:hover:not(.catBtnActive) {
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+}
+
+/* Main Card */
+.mainCard {
+  width: 95%;
+  max-width: 1240px;
+  min-height: 640px;
+  background-color: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .mainCard {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+/* Left Panel (Inputs & Controls) */
+.leftPanel {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+  border-right: 1px solid #f1f5f9;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 820px;
+}
+
+@media (max-width: 640px) {
+  .leftPanel {
+    padding: 24px 20px;
+  }
+}
+
+.headerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #e2f9ee;
+  color: #065f46;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  letter-spacing: 0.2px;
+}
+
+.calcTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+.calcDesc {
+  font-size: 0.92rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Quick Calculator Pills Selector */
+.selectorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.selectorLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calcPillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 110px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.calcPill {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.calcPillActive {
+  background: #0d9488;
+  color: #ffffff;
+  border-color: #0d9488;
+  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.3);
+}
+
+.calcPill:hover:not(.calcPillActive) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Primary Calculate CTA Button */
+.calculateBtn {
+  margin-top: 10px;
+  background-color: #0e272b;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  padding: 16px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(14, 39, 43, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.3px;
+}
+
+.calculateBtn:hover {
+  background-color: #163d43;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(14, 39, 43, 0.45);
+}
+
+.calculateBtn:active {
+  transform: translateY(0);
+}
+
+/* Right Panel (Results & Formula) */
+.rightPanel {
+  padding: 36px 40px;
+  background-color: #fafbfd;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 820px;
+}
+
+@media (max-width: 640px) {
+  .rightPanel {
+    padding: 24px 20px;
+  }
+}
+
+/* Top Result Card */
+.resultCard {
+  background-color: #fff8f5;
+  border: 1.5px solid #ffede5;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(255, 101, 80, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.resultTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resultTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.titleAccentLine {
+  width: 40px;
+  height: 4px;
+  background: #ff6550;
+  border-radius: 4px;
+}
+
+.resultGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .resultGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.metricBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metricLabel {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.metricValueBadge {
+  background-color: #e2f9ee;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #065f46;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.12);
+  word-break: break-word;
+  line-height: 1.1;
+  transition: transform 0.2s ease;
+}
+
+.metricValueBadge:hover {
+  transform: scale(1.02);
+}
+
+.metricExtra {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Custom Scrollbars */
+.calcPillsList::-webkit-scrollbar,
+.leftPanel::-webkit-scrollbar,
+.rightPanel::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.calcPillsList::-webkit-scrollbar-thumb,
+.leftPanel::-webkit-scrollbar-thumb,
+.rightPanel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.calcPillsList::-webkit-scrollbar-track,
+.leftPanel::-webkit-scrollbar-track,
+.rightPanel::-webkit-scrollbar-track {
+  background: transparent;
+}

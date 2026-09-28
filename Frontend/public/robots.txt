@@ -1,0 +1,9 @@
+# Robots.txt for Calcify ML & Statistics Calculators
+User-agent: *
+Allow: /
+Allow: /calculators/
+Allow: /machine-learning-calculators/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://calcify.dev/sitemap.xml
